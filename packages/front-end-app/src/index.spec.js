@@ -1,6 +1,6 @@
-import { expect, test } from '@jest/globals';
-import greet from './index';
+const { expect, test } = require('@jest/globals');
+const { greet } = require('./index');
 
 test('greeting', () => {
-  expect(greet('Foo')).toBe('Hello, Foo');
+  expect(greet('Ben')).toBe('Hello, Ben');
 });

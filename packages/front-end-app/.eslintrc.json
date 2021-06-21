@@ -2,7 +2,8 @@
   "root":true,
   "env":{
      "browser":true,
-     "node":true,
+    
+     "commonjs": true,
      "es6":true
   },
   "globals":{
@@ -19,6 +20,11 @@
   "plugins":[
      "prettier"
   ],
+  "parserOptions": {
+      "ecmaVersion": 2017,
+      "experimentalObjectRestSpread": true,
+      "sourceType": "module"
+   },
   "rules":{
      "no-console":1,
      "prettier/prettier":2

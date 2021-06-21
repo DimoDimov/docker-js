@@ -6,8 +6,8 @@
   "scripts": {
     "build:dev": "npm-run-all clean:dist bundle:dev",
     "build:prod": "npm run  && npm-run-all clean:dist bundle:prod",
-    "bundle:prod": "npm-run-all--parallel bundle:prod:js build:sass",
-    "bundle:dev": "npm-run-all--parallel bundle:dev:js build:sass",
+    "bundle:prod": "npm-run-all --parallel bundle:prod:js build:sass",
+    "bundle:dev": "npm-run-all --parallel bundle:dev:js build:sass",
     "bundle:prod:js": "esbuild src/index.js --bundle --platform=node --minify --outfile=dist/index.js",
     "bundle:dev:js": "esbuild src/index.js --bundle --platform=node --minify --sourcemap=external --outfile=dist/index.js",
     "build:sass": "node-sass src/sass/main.scss src/public/stylesheets/main.css --output-style compressed",
@@ -33,7 +33,6 @@
     "esbuild": "^0.11.21",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-prettier": "^3.4.0",
     "fs-extra": "^10.0.0",
     "husky": "^6.0.0",

@@ -2,7 +2,7 @@
 
 ## Technology stack
 
-NodeJS and Express based application. Typescript is the main language used for code generations
+NodeJS and Express based application. Javascript is the main language used for code generations
 
 ## Linters 
 
@@ -26,8 +26,6 @@ Alternatively we can use the
 ESBuild - https://github.com/evanw/esbuild
 
 Why use esbuild in addition to tsc? The TypeScript compiler doesn’t bundle well for browsers (developers usually resort to additional bundlers like webpack, parcel or rollup), and it’s pretty slow.
-
-This loader is enabled by default for .ts files, which means esbuild has built-in support for parsing TypeScript syntax and discarding the type annotations. However, esbuild does not do any type checking so we will still need to run tsc -noEmit in parallel with esbuild to check types.
 
 ## Nodemon
 

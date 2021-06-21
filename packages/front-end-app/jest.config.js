@@ -1,9 +1,6 @@
 module.exports = {
   roots: ['<rootDir>/src'],
-  testMatch: ['**/__tests__/**/*.+(ts|js)', '**/?(*.)+(spec|test).+(ts|js)'],
-  transform: {
-    '^.+\\.(ts)$': 'ts-jest',
-  },
+  testMatch: ['**/__tests__/**/*.+(js)', '**/?(*.)+(spec|test).+(js)'],
   collectCoverage: true,
   coverageThreshold: {
     global: {

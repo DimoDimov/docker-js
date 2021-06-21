@@ -5,6 +5,6 @@ const greet = (name) => {
   return `Hello, ${name}`;
 };
 
-console.log(greet('Dimov327111'));
+console.log(greet('Ben327111'));
 
-export default greet;
+exports.greet = greet;

@@ -1,24 +1,24 @@
 {
   "root":true,
   "env":{
-     "browser":true,
-    
-     "commonjs": true,
-     "es6":true
+      "browser":true,
+      "node": true,
+      "commonjs": true,
+      "es6":true
   },
   "globals":{
      "Promise":"readonly"
   },
   "extends":[
-     "eslint:recommended",
-     "plugin:prettier/recommended"
+      "eslint:recommended",
+      "plugin:prettier/recommended"
   ],
   "ignorePatterns":[
-     "node_modules/**/*",
-     "dist/**/*"
+      "node_modules/**/*",
+      "dist/**/*"
   ],
   "plugins":[
-     "prettier"
+      "prettier"
   ],
   "parserOptions": {
       "ecmaVersion": 2017,
@@ -26,12 +26,12 @@
       "sourceType": "module"
    },
   "rules":{
-     "no-console":1,
-     "prettier/prettier":2
+      "no-console":1,
+      "prettier/prettier":2
   },
   "settings":{
-     "react":{
-        "version":"999.999.999"
-     }
+      "react":{
+         "version":"999.999.999"
+      }
   }
 }

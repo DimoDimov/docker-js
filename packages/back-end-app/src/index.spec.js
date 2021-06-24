@@ -2,5 +2,5 @@ const { expect, test } = require('@jest/globals');
 const { greet } = require('./index');
 
 test('greeting', () => {
-  expect(greet('World')).toBe('Hello, World!');
+  expect(greet('Ben')).toBe('Hello, Ben');
 });

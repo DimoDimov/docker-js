@@ -6,17 +6,13 @@
   "scripts": {
     "build:dev": "npm-run-all clean:dist bundle:dev",
     "build:prod": "npm run  && npm-run-all clean:dist bundle:prod",
-    "bundle:prod": "npm-run-all --parallel bundle:prod:js build:sass copy:css copy:views",
-    "bundle:dev": "npm-run-all --parallel bundle:dev:js build:sass copy:css copy:views",
-    "bundle:prod:js": "esbuild src/index.js --bundle --platform=node --external:fsevents",
-    "bundle:dev:js": "esbuild src/index.js --bundle --platform=node --outfile=dist/index.js --external:fsevents",
-    "build:sass": "node-sass src/sass/main.scss src/public/stylesheets/main.css --output-style compressed",
-    "copy:css": "node ./utils/copy-public.js",
-    "copy:views": "node ./utils/copy-views.js",
+    "bundle:prod": "npm-run-all --parallel bundle:prod:js",
+    "bundle:dev": "npm-run-all --parallel bundle:dev:js",
+    "bundle:prod:js": "esbuild src/index.js --bundle --platform=node --minify --outfile=dist/index.js",
+    "bundle:dev:js": "esbuild src/index.js --bundle --platform=node --minify --sourcemap=external --outfile=dist/index.js",
     "clean:dist": "rm -rf dist",
-    "docker:pre": "npm-run-all --parallel docker:pre:esbuild docker:pre:node-sass",
+    "docker:pre": "npm-run-all --parallel docker:pre:esbuild",
     "docker:pre:esbuild": "node node_modules/esbuild/install.js",
-    "docker:pre:node-sass": "node node_modules/node-sass/scripts/install.js",
     "nodemon": "nodemon",
     "start": "node dist/index.js",
     "start:dev": "npm run nodemon",
@@ -46,12 +42,6 @@
   },
   "dependencies": {
     "@jest/globals": "^26.6.2",
-    "@ministryofjustice/frontend": "^0.2.4",
-    "express": "^4.17.1",
-    "nunjucks": "^3.2.3",
-    "nunjucks-date-filter": "^0.1.1"
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
+    "@ministryofjustice/frontend": "^0.2.4"
   }
 }
